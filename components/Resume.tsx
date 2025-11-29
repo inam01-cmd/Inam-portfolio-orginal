@@ -1,7 +1,7 @@
 import React from 'react';
 import SectionHeading from './SectionHeading';
 import { SectionId } from '../types';
-import { Download, GraduationCap, Award, FileText, Calendar, ShieldCheck, Server, BookOpen } from 'lucide-react';
+import { GraduationCap, Award, Calendar, ShieldCheck, Server, BookOpen } from 'lucide-react';
 
 const Resume: React.FC = () => {
   return (
@@ -12,11 +12,11 @@ const Resume: React.FC = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <SectionHeading 
-          title="Resume & Education" 
+          title="Education" 
           subtitle="My academic background, professional certifications, and technical coursework."
         />
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid lg:grid-cols-2 gap-12">
           
           {/* Left Column: Education Timeline */}
           <div>
@@ -131,40 +131,6 @@ const Resume: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Download Section */}
-        <div className="max-w-4xl mx-auto mt-8">
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-700 p-8 md:p-10 text-center shadow-2xl">
-            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
-              <div className="text-left max-w-lg">
-                <h3 className="text-2xl font-bold text-white mb-2 flex items-center">
-                  <FileText className="mr-3 text-primary" size={24} />
-                  Download Complete Resume
-                </h3>
-                <p className="text-slate-400">
-                  Get the detailed PDF version of my resume, including full project history and technical skill breakdown.
-                </p>
-              </div>
-              
-              <a 
-                href="/resume.pdf" 
-                download="Inam_Ullah_Resume.pdf"
-                className="shrink-0 flex items-center px-6 py-3 bg-white text-darker font-bold rounded-full hover:bg-slate-200 transition-colors shadow-lg shadow-white/10"
-                onClick={(e) => {
-                  e.preventDefault();
-                  alert("In a real environment, this would download the PDF file provided.");
-                }}
-              >
-                <span>Download PDF</span>
-                <Download size={18} className="ml-2" />
-              </a>
-            </div>
-            
-            {/* Decorative background elements */}
-            <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary/10 rounded-full blur-2xl"></div>
-            <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-secondary/10 rounded-full blur-2xl"></div>
           </div>
         </div>
 

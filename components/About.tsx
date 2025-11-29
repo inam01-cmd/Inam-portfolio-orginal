@@ -11,21 +11,26 @@ interface SkillCategory {
 
 const skillCategories: SkillCategory[] = [
   {
-    title: "Cloud Platforms",
+    title: "Designing Scalable & Secure Cloud Architectures",
     icon: <Cloud className="text-primary" size={24} />,
     items: [
-      "AWS, Azure, GCP, Hetzner, DigitalOcean, Proxmox",
-      "EC2, S3, Lambda, RDS, ECS, EKS",
+      "VPC & Network Design",
+      "IAM & Security Architecture",
+      "Auto Scaling & Load Balancing",
+      "CloudFront, Route 53, CloudFormation",
+      "EC2, S3, EBS, EFS, Lambda, ECS, EKS",
       "Auto Scaling, Load Balancers, Route53",
-      "CloudWatch, Azure Monitor, GCP Monitoring"
+      "Monitoring (CloudWatch, CloudTrail)",
+      "Cost & Performance Optimization",
     ]
   },
   {
     title: "DevOps & Automation",
     icon: <Settings className="text-primary" size={24} />,
     items: [
-      "IaC: Terraform, Ansible, CloudFormation, ARM",
-      "CI/CD: Jenkins, GitHub Actions, GitLab CI/CD, Azure DevOps",
+      "IaC: Terraform, Ansible, CloudFormation",
+      "CI/CD: Jenkins, GitHub Actions, GitLab CI/CD, AWS DevOps",
+      "DataBase: MySQL, MongoDB",
       "Security: SonarQube, OWASP, Trivy"
     ]
   },
@@ -42,7 +47,8 @@ const skillCategories: SkillCategory[] = [
     icon: <Activity className="text-primary" size={24} />,
     items: [
       "Prometheus, Grafana, Loki",
-      "ELK Stack, DataDog"
+      "ELK Stack, DataDog",
+      "Nagios, Zabbix"
     ]
   },
   {

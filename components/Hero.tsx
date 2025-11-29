@@ -1,29 +1,40 @@
 import React from 'react';
-import { ArrowDown, Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Download } from 'lucide-react';
 import { SectionId } from '../types';
 
 const Hero: React.FC = () => {
-  const scrollToProjects = () => {
-    const element = document.getElementById(SectionId.PROJECTS);
-    element?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
-    <section id={SectionId.HOME} className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
-      {/* Background decoration */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob"></div>
-        <div className="absolute top-20 right-10 w-72 h-72 bg-secondary/20 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-32 left-1/2 w-72 h-72 bg-pink-500/20 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+    <section id={SectionId.HOME} className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#020617]">
+      {/* Abstract Wave Background */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden opacity-30 pointer-events-none">
+        <svg className="absolute w-[200%] h-[200%] top-[-50%] left-[-50%] animate-spin-slow opacity-20" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style={{stopColor: '#6366f1', stopOpacity: 1}} />
+                <stop offset="100%" style={{stopColor: '#a855f7', stopOpacity: 1}} />
+                </linearGradient>
+            </defs>
+            <path d="M500,500 m-450,0 a450,450 0 1,0 900,0 a450,450 0 1,0 -900,0" fill="none" stroke="url(#grad1)" strokeWidth="1" strokeDasharray="20 10" />
+            <path d="M500,500 m-400,0 a400,400 0 1,0 800,0 a400,400 0 1,0 -800,0" fill="none" stroke="url(#grad1)" strokeWidth="1" strokeDasharray="15 15" />
+            <path d="M500,500 m-350,0 a350,350 0 1,0 700,0 a350,350 0 1,0 -700,0" fill="none" stroke="url(#grad1)" strokeWidth="1" strokeDasharray="10 20" />
+            <path d="M500,500 m-300,0 a300,300 0 1,0 600,0 a300,300 0 1,0 -600,0" fill="none" stroke="url(#grad1)" strokeWidth="1.5" strokeDasharray="25 25" />
+            <path d="M500,500 m-250,0 a250,250 0 1,0 500,0 a250,250 0 1,0 -500,0" fill="none" stroke="url(#grad1)" strokeWidth="2" strokeDasharray="30 30" />
+        </svg>
+        
+        {/* Right side glow */}
+        <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] -mr-32"></div>
+        {/* Left side glow */}
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/10 rounded-full blur-[80px] -ml-20"></div>
       </div>
 
-      <div className="container mx-auto px-6 text-center z-10">
-        <div className="mb-8 relative inline-block group">
-          <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 blur"></div>
+      <div className="container mx-auto px-6 text-center z-10 flex flex-col items-center">
+        {/* Profile Image */}
+        <div className="mb-8 relative group">
+          <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full opacity-70 blur group-hover:opacity-100 transition duration-500"></div>
           <img 
             src="/inam.jpg" 
             alt="Inam Ullah" 
-            className="relative w-56 h-56 rounded-full border-4 border-darker object-cover object-top mx-auto shadow-2xl shadow-primary/20"
+            className="relative w-48 h-48 md:w-56 md:h-56 rounded-full border-4 border-[#020617] object-cover object-top shadow-2xl"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
               target.src = "https://ui-avatars.com/api/?name=Inam+Ullah&background=0f172a&color=6366f1&size=200";
@@ -31,41 +42,46 @@ const Hero: React.FC = () => {
           />
         </div>
         
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
-          Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Inam Ullah</span>
+        {/* Typography - Matching Reference */}
+        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight drop-shadow-lg">
+          Inam Ullah
         </h1>
         
-        <h2 className="text-xl md:text-3xl text-slate-200 font-semibold mb-6">
-          DevOps Engineer | Cloud Solutions Architect
+        <h2 className="text-2xl md:text-4xl text-slate-300 font-light mb-8">
+          I'm a <span className="text-white font-semibold border-b-4 border-primary pb-1">DevOps Engineer</span>.
         </h2>
         
-        <p className="text-lg text-slate-400 mb-8 max-w-3xl mx-auto leading-relaxed">
-          Accomplished Linux System Administrator and DevOps professional with 2 years of experience in cloud infrastructure management, automation, and system optimization. 
-          Skilled in CI/CD pipelines, Bash scripting, container orchestration, and security compliance (ISO 27001).
+        <p className="text-lg text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed font-light">
+           Specializing in Cloud Automation, CI/CD, and Resilient Infrastructure.
         </p>
 
-        <div className="flex justify-center space-x-6 mb-12">
-          <a href="https://github.com/inam-09" target="_blank" rel="noopener noreferrer" className="p-3 bg-card hover:bg-slate-700 rounded-full transition-colors text-slate-300 hover:text-white border border-slate-700" aria-label="GitHub">
-            <Github size={24} />
-          </a>
-          <a href="https://linkedin.com/in/inam-devops99" target="_blank" rel="noopener noreferrer" className="p-3 bg-card hover:bg-slate-700 rounded-full transition-colors text-slate-300 hover:text-white border border-slate-700" aria-label="LinkedIn">
-            <Linkedin size={24} />
-          </a>
-          <a href="mailto:inamkhan.alpari@gmail.com" className="p-3 bg-card hover:bg-slate-700 rounded-full transition-colors text-slate-300 hover:text-white border border-slate-700" aria-label="Email">
-            <Mail size={24} />
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+           <a 
+            href="/resume.pdf" 
+            download="Inam_Ullah_Resume.pdf"
+            className="px-8 py-3.5 bg-[#4c1d95] hover:bg-[#5b21b6] text-white font-semibold rounded-lg transition-all shadow-lg shadow-primary/25 flex items-center border border-primary/20 hover:scale-105 transform duration-200"
+            onClick={(e) => {
+                  e.preventDefault();
+                  alert("In a real environment, this would download the PDF file provided.");
+            }}
+          >
+            Download Resume
           </a>
         </div>
 
-        <button 
-          onClick={scrollToProjects}
-          className="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-full hover:shadow-lg hover:shadow-primary/50 transition-all transform hover:-translate-y-1"
-        >
-          View My Projects
-        </button>
-
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ArrowDown className="text-slate-500" size={32} />
-        </div>
+         {/* Social Icons */}
+         <div className="flex justify-center space-x-8 mt-16">
+          <a href="https://github.com/inam-09" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors transform hover:-translate-y-1">
+            <Github size={28} />
+          </a>
+          <a href="https://linkedin.com/in/inam-devops99" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors transform hover:-translate-y-1">
+            <Linkedin size={28} />
+          </a>
+          <a href="mailto:inamkhan.alpari@gmail.com" className="text-slate-400 hover:text-white transition-colors transform hover:-translate-y-1">
+            <Mail size={28} />
+          </a>
+         </div>
       </div>
     </section>
   );

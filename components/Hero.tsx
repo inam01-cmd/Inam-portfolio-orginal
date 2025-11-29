@@ -58,12 +58,9 @@ const Hero: React.FC = () => {
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
            <a 
-            href="/resume.pdf" 
-            download="Inam_Ullah_Resume.pdf"
+            href="/Inam-Ullah-Resume-DevOps.pdf" 
+            download="Inam-Ullah-Resume-DevOps.pdf"
             className="px-8 py-3.5 bg-[#4c1d95] hover:bg-[#5b21b6] text-white font-semibold rounded-lg transition-all shadow-lg shadow-primary/25 flex items-center border border-primary/20 hover:scale-105 transform duration-200"
-            onClick={() => {
-                window.open("/Inam-Ullah-Resume-DevOps.pdf", "_blank");
-            }}
           >
             Download Resume
           </a>

@@ -55,21 +55,16 @@ const Hero: React.FC = () => {
            Specializing in Cloud Automation, CI/CD, and Resilient Infrastructure.
         </p>
 
-       {/* Buttons */}
+        {/* Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-        <a
-          href="/Inam-Ullah-Resume-DevOps.pdf"
-          download="Inam_Ullah_Resume_DevOps.pdf"
-          className="px-8 py-3.5 bg-[#4c1d95] hover:bg-[#5b21b6] text-white font-semibold rounded-lg transition-all shadow-lg shadow-primary/25 flex items-center border border-primary/20 hover:scale-105 transform duration-200"
-          onClick={(e) => {
-          // Allow both download + open in new tab
-          e.preventDefault();
-          window.open("/Inam-Ullah-Resume-DevOps.pdf", "_blank");
-        }}
-        >  
-          Download Resume
-        </a>
-       </div>
+           <a 
+            href="/Inam-Ullah-Resume-DevOps.pdf" 
+            download="Inam_Ullah_Resume.pdf"
+            className="px-8 py-3.5 bg-[#4c1d95] hover:bg-[#5b21b6] text-white font-semibold rounded-lg transition-all shadow-lg shadow-primary/25 flex items-center border border-primary/20 hover:scale-105 transform duration-200"
+          >
+            Download Resume
+          </a>
+        </div>
 
          {/* Social Icons */}
          <div className="flex justify-center space-x-8 mt-16">

@@ -35,12 +35,7 @@ export const sendMessageToGemini = async (
   history: { role: 'user' | 'model'; text: string }[] = []
 ): Promise<string> => {
   try {
-    const apiKey = process.env.API_KEY;
-    if (!apiKey) {
-      return "I'm sorry, my AI brain is currently missing its API Key. Please tell the developer to add it!";
-    }
-
-    const ai = new GoogleGenAI({ apiKey });
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     
     // Map internal history format to Gemini history format if needed, 
     // but for simple single-turn or short context, we can just use generateContent with the system instruction.
